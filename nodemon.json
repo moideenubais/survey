@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_URL": "mongodb://localhost:27017/surveyDB",
+    "JWT_KEY": "SurveySecretJwtKey"
+  }
+}
