@@ -85,7 +85,7 @@ const RegisterView = () => {
                   //     message: "Registered successfully",
                   //   })
                   // );
-                  navigate("/app/dashboard", { replace: true });
+                  navigate("/app/surveys", { replace: true });
                 })
                 .catch((error) => {
                   console.log(error);

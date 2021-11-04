@@ -49,7 +49,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   const { user, userRole } = useContext(AuthContext);
 
   const itemsInitial = [
-    {
+    user.user_type === "admin" && {
       href: "/app/dashboard",
       icon: BarChartIcon,
       title: "Dashboard",
