@@ -11,14 +11,15 @@ const auth = require("./middleware/auth");
 const { customRedisRateLimiter } = require("./middleware/customLimitter");
 
 const app = express();
-app.use(
-  rateLimit({
-    windowMs: 60 * 1000, // 12 hour duration in milliseconds
-    max: 5,
-    message: "You exceeded 100 requests in 12 hour limit!",
-    headers: true,
-  })
-);
+// app.use(
+//   rateLimit({
+//     windowMs: 60 * 1000, // 12 hour duration in milliseconds
+//     max: 5,
+//     message: "You exceeded 100 requests in 12 hour limit!",
+//     headers: true,
+//   })
+// );
+app.use(customRedisRateLimiter);
 
 app.use(express.json());
 app.use(cors());

@@ -48,7 +48,7 @@ module.exports.customRedisRateLimiter = (req, res, next) => {
       if (totalWindowRequestsCount >= MAX_WINDOW_REQUEST_COUNT) {
         res
           .status(429)
-          .jsend.error(
+          .json(
             `You have exceeded the ${MAX_WINDOW_REQUEST_COUNT} requests in ${WINDOW_SIZE_IN_HOURS} hrs limit!`
           );
       } else {
